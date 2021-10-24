@@ -43,6 +43,65 @@ $pink: #F67599
 .d-none
     display: none !important
 
+.m-R-12
+    margin-right: 30px
+
+.col-1
+    width: 100%
+
+.w-3
+    width: 30%
+
+.w-5
+    width: 50%
+
+.w-7
+    width: 70%
+
+.d-flex
+    display: flex
+
+    &.wrap
+        +breakpoint(mobile)
+            flex-wrap: wrap
+
+        .w-3,
+        .w-5,
+        .w-7
+            +breakpoint(mobile)
+                width: 100%
+
+        .m-R-12
+            +breakpoint(mobile)
+                margin-right: 0
+
+// form, input, select stlyle start
+input, select
+    border: 1px solid #4A4A4A
+    box-sizing: border-box
+    border-radius: 4px
+    height: 40px
+    width: 100%
+    padding-left: 16px
+    margin-bottom: 24px
+
+input
+    font-family: Noto Sans TC
+    font-size: 12px
+    line-height: 16px
+    color: #999999
+
+    &::placeholder 
+        color: #999999
+        opacity: 1
+
+select
+    font-size: #2A2A2A
+    appearance: none
+
+
+// form, input, select stlyle end
+
 // header start 
 #header
     position: relative
@@ -675,61 +734,3 @@ $pink: #F67599
                     
 
 // cart end
-.m-R-12
-    margin-right: 30px
-
-.col-1
-    width: 100%
-
-.w-3
-    width: 30%
-
-.w-5
-    width: 50%
-
-.w-7
-    width: 70%
-
-.d-flex
-    display: flex
-
-    &.wrap
-        +breakpoint(mobile)
-            flex-wrap: wrap
-
-        .w-3,
-        .w-5,
-        .w-7
-            +breakpoint(mobile)
-                width: 100%
-
-        .m-R-12
-            +breakpoint(mobile)
-                margin-right: 0
-
-// form, input, select stlyle start
-input, select
-    border: 1px solid #4A4A4A
-    box-sizing: border-box
-    border-radius: 4px
-    height: 40px
-    width: 100%
-    padding-left: 16px
-    margin-bottom: 24px
-
-input
-    font-family: Noto Sans TC
-    font-size: 12px
-    line-height: 16px
-    color: #999999
-
-    &::placeholder 
-        color: #999999
-        opacity: 1
-
-select
-    font-size: #2A2A2A
-    appearance: none
-
-
-// form, input, select stlyle end
