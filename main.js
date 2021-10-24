@@ -20,7 +20,7 @@ burger.addEventListener('click', function() {
 // cart num edit start
 productItem.forEach(function(item, index){
     item.addEventListener('click', editProductItem)
-    item.querySelector('.fee').innerText = `$${item.querySelector('.fee').dataset.fee}`
+    // item.querySelector('.fee').innerText = `$${item.querySelector('.fee').dataset.fee}`
     totalFee += +(item.querySelector('.fee').dataset.fee)
     totalEle.innerText = `$${totalFee}`
 })
@@ -32,7 +32,7 @@ function editProductItem(e) {
 
     if (e.target.classList.contains('add-btn')) {
         num = ++e.target.previousElementSibling.innerHTML
-        feeEle.innerText = `$${perfee * num}`
+        // feeEle.innerText = `$${perfee * num}`
         totalFee += +(perfee)
 
         totalEle.innerText = `$${totalFee}`
@@ -41,7 +41,7 @@ function editProductItem(e) {
     if (e.target.classList.contains('minus-btn')) {
         if (e.target.nextElementSibling.innerHTML === '1') return
         num = --e.target.nextElementSibling.innerHTML
-        feeEle.innerText = `$${perfee * num}`
+        // feeEle.innerText = `$${perfee * num}`
         totalFee += -(perfee)
 
         totalEle.innerText = `$${totalFee}`
