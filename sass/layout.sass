@@ -1,0 +1,735 @@
+
+@import mixins/_rwd
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;900&family=Spartan:wght@400;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Nunito+Sans:wght@300;400;600;700;900&family=Spartan:wght@400;500;900&display=swap');
+
+// css reset start
+body
+    padding: 0
+    margin: 0
+    position: relative
+    overflow-x: hidden
+
+button
+    background: transparent
+    border: none
+
+    &:focus-visible
+        outline: none
+// css reset end
+
+
+$white: #ffffff
+$black: #000000
+$pink: #F67599
+
+%style-reset
+    ul, ol
+        list-style: none
+        margin: 0
+        padding: 0
+
+    a
+        text-decoration: none
+
+.wide-container
+    width: 1440px
+    max-width: 100%
+    margin: auto
+
+.d-none
+    display: none !important
+
+// header start 
+#header
+    position: relative
+    display: flex
+    align-items: center
+    padding: 1px 165px
+    z-index: 1
+
+    @extend %style-reset
+
+    +breakpoint(zone-nb-small)
+        padding: 0 30px
+
+    +breakpoint(mobile)
+        padding: 0 15px 
+
+    .logo
+        order: 1
+        margin: 15px 0 5px 86px
+
+        +breakpoint(mobile)
+            margin: 20px auto
+
+        img
+            max-width: 170px
+
+            &.desktop
+                +breakpoint(mobile)
+                    display: none
+
+            &.mobile
+                display: none
+
+                +breakpoint(mobile)
+                    display: block
+                    max-width: 136px
+        
+    .main-menu
+        order: 0
+        display: flex
+
+        +breakpoint(zone-nb-small)
+            flex-wrap: wrap
+
+        +breakpoint(mobile)
+            display: block
+            padding: 0 15px
+
+        &.desktop
+            +breakpoint(mobile)
+                display: none
+
+        li
+            margin-right: 32px
+
+            +breakpoint(mobile)
+                margin-right: 0
+                padding: 24px 0
+                text-align: center
+                border-bottom: 1px solid rgba(42, 42, 42, 0.1)
+
+            &:last-child
+                margin-right: 0
+
+        a
+            font-weight: 500
+            font-size: 16px
+            line-height: 24px
+            color: $black
+
+    .function-box
+        order: 2
+        display: flex
+        margin-left: auto
+
+        +breakpoint(mobile)
+            margin: 28px 0
+            justify-content: center
+
+        &.desktop
+            +breakpoint(mobile)
+                display: none
+
+        a
+            display: block
+            margin-right: 20px
+            width: 24px
+            height: 24px
+            background-repeat: no-repeat
+            
+            &:last-child
+                margin-right: 0
+
+            &.search-btn
+                background-image: url('../image/icon-search-light.png') 
+
+            &.shop-btn
+                background-image: url('../image/icon-cart-light.png') 
+
+            &.colorchange-btn
+                background-image: url('../image/icon-light.png') 
+
+    .mobile-main-menu
+        display: none
+        position: absolute
+        width: 100%
+        height: 100vh
+        top: 100%
+        left: 0 
+        background: $white
+
+        &.open
+            display: block
+
+    #burger
+        width: 20px
+        height: 15px
+        margin: 0 auto
+        transform: rotate(0deg)
+        transition: .4s ease-in-out
+        cursor: pointer
+        display: none
+        position: absolute
+        top: 0
+        left: 15px
+        bottom: 0
+        margin: auto
+
+        +breakpoint(mobile)
+            display: block
+
+        &.open
+            span
+                &:nth-child(1)
+                    transform: rotate(45deg)
+                    top: 0px
+                    left: 0
+
+                &:nth-child(2)
+                    width: 0
+                    opacity: 0
+
+                &:nth-child(3)
+                    width: 20px
+                    transform: rotate(-45deg)
+                    top: 14px
+                    left: 0
+
+        span
+            display: block
+            position: absolute
+            height: 3px
+            background: $black
+            border-radius: 9px
+            opacity: 1
+            left: 0
+            transform: rotate(0deg)
+            transition: .25s ease-in-out
+
+            &:nth-child(1)
+                width: 20px
+                top: 0
+                transform-origin: left center
+
+            &:nth-child(2)
+                width: 16px
+                top: 6px
+                transform-origin: left center
+
+            &:nth-child(3)
+                width: 12px
+                top: 12px
+                transform-origin: left center
+
+// header end
+// footer start
+#footer
+    position: relative
+    display: flex
+    padding: 64px 165px 72px
+
+    @extend %style-reset
+
+    +breakpoint(zone-nb-small)
+        padding: 64px 30px 72px
+
+    +breakpoint(mobile)
+        display: none
+
+    &::after
+        content: ''
+        position: absolute
+        width: 100vw
+        height: 100%
+        top: 0
+        left: 50%
+        transform: translateX(-50%) 
+        background: #E5E5E5
+        z-index: -1
+
+    .logo
+        width: calc(25.6% - 114px)
+        padding-top: 62px
+        margin-right: 114px
+
+        img
+            max-width: 170px
+
+    .info-box
+        display: flex
+        width: 74.4%
+
+    .info-item
+        width: calc(25% - 0px)
+        // margin-right: 120px 
+
+        &:last-child
+            margin-right: 0
+            
+
+        .title
+            font-family: Noto Sans TC
+            font-weight: bold
+            font-size: 24px
+            line-height: 24px
+            color: $black
+            margin-bottom: 24px
+
+        ul
+            li
+                margin-bottom: 8px
+
+                &.social-box
+                    a
+                        margin-right: 18px
+
+                        &:last-child
+                            margin-right: 0
+                    
+                    i
+                        font-size: 18px
+
+            a
+                font-size: 16px
+                line-height: 17px
+                color: rgba($black, 0.6)
+// footer end
+
+// cart start
+.card-shop
+    padding: 80px 165px 124px
+
+    @extend %style-reset
+
+    +breakpoint(zone-nb-small)
+        padding: 80px 30px 124px
+
+    +breakpoint(mobile)
+        padding: 16px 15px 144px
+
+    .main-title
+        font-family: Noto Sans TC
+        font-weight: bold
+        font-size: 32px
+        line-height: 38px
+        color: #2A2A2A
+        margin-top: 0
+        margin-bottom: 48px
+
+        +breakpoint(mobile)
+            font-size: 24px
+            margin-bottom: 24px
+
+    .shop-box
+        display: flex
+
+        +breakpoint(mobile)
+            flex-wrap: wrap
+
+        .info-box
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            width: calc(60.4% - 134px)
+            margin-right: 134px
+
+            +breakpoint(mobile)
+                width: 100%
+                margin-right: 0
+
+        .cart-box
+            width: 39.6%
+
+            +breakpoint(mobile)
+                width: 100%
+
+    .steps
+        display: flex
+        align-items: center
+        margin-bottom: 55px
+
+        +breakpoint(mobile)
+            margin-bottom: 24px
+
+        .step
+            display: flex
+            align-items: center
+
+            &:last-child
+                &::after
+                    display: none
+
+            &.step-active,
+            &.step-finished
+                &::after
+                    background: $black
+
+                .order
+                    border: 1px solid #2A2A2A
+
+                    small
+                        color: #2A2A2A
+
+                .step-des
+                    color: #2A2A2A
+
+            &.step-finished
+                .order
+                    opacity: 1
+                    background: #333333
+                    border: 1px solid #333333
+                    background-image: url('../image/icon-check.png') 
+                    background-repeat: no-repeat
+                    background-position: center
+
+                    +breakpoint(mobile)
+                        background-image: url('../image/icon-check-mobile.png') 
+
+                    small
+                        opacity: 0
+
+            &::after
+                content: ''
+                display: inline-block
+                width: 60px
+                height: 2px
+                background: #AFB1BD
+                margin: 0 32px
+
+            .order
+                font-family: Nunito Sans
+                width: 22px
+                height: 22px
+                border-radius: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+                font-weight: bold
+                border: 1px solid #AFB1BD
+                white-space: nowrap
+                margin-right: 8px
+
+                +breakpoint(mobile)
+                    width: 30px
+                    height: 30px
+                    margin-right: 0
+
+                small
+                    font-size: 12px
+                    color: #AFB1BD
+
+                    +breakpoint(mobile)
+                        font-size: 16px
+
+            .step-des
+                font-family: Noto Sans TC
+                font-size: 16px
+                line-height: 24px
+                color: #AFB1BD
+                white-space: nowrap
+
+                +breakpoint(mobile)
+                    display: none
+
+    .form-outbox
+        .form-title
+            font-family: Noto Sans TC
+            font-weight: bold
+            font-size: 24px
+            line-height: 24px
+            color: #2A2A2A
+            margin-bottom: 24px
+
+        .form-box
+            margin-bottom: 48px
+
+            +breakpoint(mobile)
+                margin-bottom: 8px
+
+            label
+                display: block
+
+                &.title
+                    font-family: Noto Sans TC
+                    font-weight: bold
+                    font-size: 12px
+                    line-height: 16px
+                    color: #808080
+                    margin-bottom: 8px
+
+            .select-wrapper
+                position: relative
+
+                &::after
+                    content: ''
+                    position: absolute
+                    top: 0
+                    bottom: 22px
+                    right: 18px
+                    margin: auto
+                    width: 0
+                    height: 0
+                    border-style: solid
+                    border-width: 6px 6px 0 6px
+                    border-color: #2A2A2A transparent transparent transparent
+                   
+            .delivery-box
+                input[type="radio"]
+                    display: none
+
+                    &:checked
+                        + .delivery
+                            border: 1px solid #2A2A2A
+
+                            &::before
+                                border: 6px solid #222222
+                            
+                .delivery
+                    position: relative
+                    display: flex
+                    padding: 11px 20px
+                    box-sizing: border-box
+                    border-radius: 4px
+                    border: 1px solid #F0F0F5
+                    font-family: Inter
+                    margin-bottom: 24px
+
+                    &::before
+                        content: ''
+                        box-sizing: border-box
+                        display: inline-block
+                        width: 20px
+                        height: 20px
+                        border-radius: 50%
+                        background: #ffffff
+                        border: 1px solid #222222
+                        margin-right: 20px
+                        align-self: center
+                        
+                    .title
+                        font-weight: bold
+                        font-size: 14px
+                        line-height: 20px
+                        color: $black
+
+                    .des, 
+                    .fee
+                        font-size: 12px
+                        line-height: 16px
+                        color: $black
+
+                    .fee
+                        margin-left: auto
+
+
+    .form-btn
+        width: 100%
+        display: flex
+        justify-content: space-between
+        border-top: 1px solid #E6E6EB
+        padding-top: 38px
+
+        +breakpoint(mobile)
+            padding-top: 24px
+            width: calc(100% - 30px)
+            margin: auto
+            position: absolute
+            bottom: 40px
+
+    .step-btn
+        width: 174px
+        padding: 15px 0
+        border-radius: 8px
+        font-family: Inter
+        font-weight: 500
+        font-size: 14px
+        line-height: 17px
+        cursor: pointer
+        max-width: 100%
+
+        +breakpoint(mobile)
+            flex-grow: 1
+            width: 156px
+
+        &.prev
+            color: $black
+            text-align: left
+
+        &.next,
+        &.check
+            color: #FFFFFF
+            background: $pink
+            text-align: center
+
+            &.right
+                margin-left: auto
+            
+    .cart-box
+        background: #FFFFFF
+        border: 1px solid #F0F0F5
+        box-sizing: border-box
+        border-radius: 8px
+        padding: 0 24px
+
+        .title
+            font-family: Noto Sans TC
+            font-weight: bold
+            font-size: 18px
+            line-height: 22px
+            color: #2A2A2A
+            margin: 32px 0 34px
+
+        .product-item
+            display: flex
+            margin-bottom: 32px
+
+            +breakpoint(mobile)
+                margin-bottom: 24px
+
+        .product-img
+            width: calc(31% - 21px)
+            margin-right: 21px
+
+            +breakpoint(mobile)
+                width: 34%
+                margin-right: 0
+
+            .img
+                width: 100%
+                padding-bottom: 100%
+                border-radius: 4px
+                background-position: center
+                background-size: cover
+                background-position: center
+
+        .product-detail
+            width: 69%
+            display: flex
+            justify-content: space-between
+
+            +breakpoint(mobile)
+                display: block
+                text-align: right
+                width: 66%
+
+            .product-title
+                font-family: Noto Sans TC
+                font-size: 16px
+                line-height: 24px
+                color: #2A2A2A
+                margin-bottom: 18px
+
+            .product-num-box
+                display: flex
+                align-items: center
+
+                +breakpoint(mobile)
+                    justify-content: flex-end
+                    margin-bottom: 17px
+
+                .btn
+                    cursor: pointer
+                    width: 26px
+                    height: 27px
+                    border-radius: 50% 
+                    background: #F0F0F5
+                    box-sizing: border-box
+                    font-size: 21px
+                    color: $black
+                    display: flex
+                    justify-content: center
+
+                .product-num
+                    font-family: Inter
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 17px
+                    color: $black
+                    margin: 0 20px
+
+            .fee
+                margin-left: 20px
+                font-family: Nunito Sans
+                font-weight: bold
+                font-size: 16px
+                line-height: 22px
+                color: $black
+
+        .delivery-fee,
+        .total
+            display: flex
+            padding-top: 16px
+            margin-bottom: 32px
+            justify-content: space-between
+            border-top: 1px solid #F0F0F5
+
+            span
+                font-size: 14px
+
+                &:first-child
+                    font-family: Noto Sans TC
+                    line-height: 20px
+                    color: #2A2A2A
+
+                &:last-child
+                    font-family: Nunito Sans
+                    font-weight: bold
+                    line-height: 17px
+                    color: $black
+                    
+
+// cart end
+.m-R-12
+    margin-right: 30px
+
+.col-1
+    width: 100%
+
+.w-3
+    width: 30%
+
+.w-5
+    width: 50%
+
+.w-7
+    width: 70%
+
+.d-flex
+    display: flex
+
+    &.wrap
+        +breakpoint(mobile)
+            flex-wrap: wrap
+
+        .w-3,
+        .w-5,
+        .w-7
+            +breakpoint(mobile)
+                width: 100%
+
+        .m-R-12
+            +breakpoint(mobile)
+                margin-right: 0
+
+// form, input, select stlyle start
+input, select
+    border: 1px solid #4A4A4A
+    box-sizing: border-box
+    border-radius: 4px
+    height: 40px
+    width: 100%
+    padding-left: 16px
+    margin-bottom: 24px
+
+input
+    font-family: Noto Sans TC
+    font-size: 12px
+    line-height: 16px
+    color: #999999
+
+    &::placeholder 
+        color: #999999
+        opacity: 1
+
+select
+    font-size: #2A2A2A
+    appearance: none
+
+
+// form, input, select stlyle end
