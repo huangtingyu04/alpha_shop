@@ -36,7 +36,6 @@ let productContainer = document.querySelector('#product-container'),
         </div>`
     })
 
-    console.log(productContent, productContainer)
     productContainer.innerHTML = productContent
 
 let burger = document.querySelector('#burger'),
