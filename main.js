@@ -1,3 +1,44 @@
+const cart = [
+    {
+       name: '破壞補丁修身牛仔褲',
+       productCount: 1,
+       fee: 3999,
+       imageURL: './image/product01.png'
+    },
+    {
+        name: '刷色直筒牛仔褲',
+        productCount: 1,
+        fee: 1299,
+        imageURL: './image/product02.png'
+     }
+]
+
+let productContainer = document.querySelector('#product-container'),
+    productContent = ''
+
+    cart.forEach(item =>{
+        productContent += `
+        <div class="product-item">
+            <div class="product-img">
+                <div class="img" style="background-image: url(${item.imageURL})"></div>
+            </div>
+            <div class="product-detail">
+                <div class="product-des">
+                    <div class="product-title">${item.name}</div>
+                    <div class="product-num-box">
+                        <button class="minus-btn btn">-</button>
+                        <span class="product-num" >${item.productCount}</span>
+                        <button class="add-btn btn">+</button>
+                    </div>
+                </div>
+                <div class="fee" data-fee="${item.fee}">$${item.fee}</div>
+            </div>
+        </div>`
+    })
+
+    console.log(productContent, productContainer)
+    productContainer.innerHTML = productContent
+
 let burger = document.querySelector('#burger'),
     mobileMainenu = document.querySelector('.mobile-main-menu'),
     productItem = document.querySelectorAll('.product-item'),
@@ -20,7 +61,6 @@ burger.addEventListener('click', function() {
 // cart num edit start
 productItem.forEach(function(item, index){
     item.addEventListener('click', editProductItem)
-    // item.querySelector('.fee').innerText = `$${item.querySelector('.fee').dataset.fee}`
     totalFee += +(item.querySelector('.fee').dataset.fee)
     totalEle.innerText = `$${totalFee}`
 })

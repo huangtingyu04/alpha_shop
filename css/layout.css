@@ -38,6 +38,98 @@ button:focus-visible {
   display: none !important;
 }
 
+.m-R-12 {
+  margin-right: 30px;
+}
+
+.col-1 {
+  width: 100%;
+}
+
+.w-3 {
+  width: 30%;
+}
+
+.w-5 {
+  width: 50%;
+}
+
+.w-7 {
+  width: 70%;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 375px) {
+  .d-flex.wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .d-flex.wrap .w-3,
+  .d-flex.wrap .w-5,
+  .d-flex.wrap .w-7 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .d-flex.wrap .m-R-12 {
+    margin-right: 0;
+  }
+}
+
+input, select {
+  border: 1px solid #4A4A4A;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  height: 40px;
+  width: 100%;
+  padding-left: 16px;
+  margin-bottom: 24px;
+}
+
+input {
+  font-family: Noto Sans TC;
+  font-size: 12px;
+  line-height: 16px;
+  color: #999999;
+}
+
+input::-webkit-input-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+input::-ms-input-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+input::placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+select {
+  font-size: #2A2A2A;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 #header {
   position: relative;
   display: -webkit-box;
@@ -69,7 +161,13 @@ button:focus-visible {
   margin: 15px 0 5px 86px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 980px) {
+  #header .logo {
+    margin: 10px auto 5px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
   #header .logo {
     margin: 20px auto;
   }
@@ -112,14 +210,14 @@ button:focus-visible {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 580px) {
   #header .main-menu {
     display: block;
     padding: 0 15px;
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 580px) {
   #header .main-menu.desktop {
     display: none;
   }
@@ -129,7 +227,7 @@ button:focus-visible {
   margin-right: 32px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 580px) {
   #header .main-menu li {
     margin-right: 0;
     padding: 24px 0;
@@ -159,7 +257,7 @@ button:focus-visible {
   margin-left: auto;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 580px) {
   #header .function-box {
     margin: 28px 0;
     -webkit-box-pack: center;
@@ -168,7 +266,7 @@ button:focus-visible {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 580px) {
   #header .function-box.desktop {
     display: none;
   }
@@ -229,7 +327,7 @@ button:focus-visible {
   margin: auto;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 580px) {
   #header #burger {
     display: block;
   }
@@ -304,7 +402,13 @@ button:focus-visible {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 800px) {
+  #footer {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 580px) {
   #footer {
     display: none;
   }
@@ -329,6 +433,15 @@ button:focus-visible {
   margin-right: 114px;
 }
 
+@media only screen and (max-width: 800px) {
+  #footer .logo {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-top: 0;
+    margin-right: 0;
+  }
+}
+
 #footer .logo img {
   max-width: 170px;
 }
@@ -338,6 +451,12 @@ button:focus-visible {
   display: -ms-flexbox;
   display: flex;
   width: 74.4%;
+}
+
+@media only screen and (max-width: 800px) {
+  #footer .info-box {
+    width: 100%;
+  }
 }
 
 #footer .info-item {
@@ -389,7 +508,7 @@ button:focus-visible {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 580px) {
   .card-shop {
     padding: 16px 15px 144px;
   }
@@ -418,7 +537,7 @@ button:focus-visible {
   display: flex;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 580px) {
   .card-shop .shop-box {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -440,7 +559,14 @@ button:focus-visible {
   margin-right: 134px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 800px) {
+  .card-shop .shop-box .info-box {
+    width: calc(60.4% - 70px);
+    margin-right: 70px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
   .card-shop .shop-box .info-box {
     width: 100%;
     margin-right: 0;
@@ -451,7 +577,7 @@ button:focus-visible {
   width: 39.6%;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 580px) {
   .card-shop .shop-box .cart-box {
     width: 100%;
   }
@@ -577,7 +703,7 @@ button:focus-visible {
   white-space: nowrap;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 980px) {
   .card-shop .steps .step .step-des {
     display: none;
   }
@@ -705,7 +831,7 @@ button:focus-visible {
   padding-top: 38px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 580px) {
   .card-shop .form-btn {
     padding-top: 24px;
     width: calc(100% - 30px);
@@ -787,7 +913,7 @@ button:focus-visible {
   margin-right: 21px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 800px) {
   .card-shop .cart-box .product-img {
     width: 34%;
     margin-right: 0;
@@ -813,7 +939,7 @@ button:focus-visible {
           justify-content: space-between;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 800px) {
   .card-shop .cart-box .product-detail {
     display: block;
     text-align: right;
@@ -838,7 +964,7 @@ button:focus-visible {
           align-items: center;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 800px) {
   .card-shop .cart-box .product-detail .product-num-box {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -914,97 +1040,5 @@ button:focus-visible {
   font-weight: bold;
   line-height: 17px;
   color: #000000;
-}
-
-.m-R-12 {
-  margin-right: 30px;
-}
-
-.col-1 {
-  width: 100%;
-}
-
-.w-3 {
-  width: 30%;
-}
-
-.w-5 {
-  width: 50%;
-}
-
-.w-7 {
-  width: 70%;
-}
-
-.d-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media only screen and (max-width: 375px) {
-  .d-flex.wrap {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  .d-flex.wrap .w-3,
-  .d-flex.wrap .w-5,
-  .d-flex.wrap .w-7 {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  .d-flex.wrap .m-R-12 {
-    margin-right: 0;
-  }
-}
-
-input, select {
-  border: 1px solid #4A4A4A;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 4px;
-  height: 40px;
-  width: 100%;
-  padding-left: 16px;
-  margin-bottom: 24px;
-}
-
-input {
-  font-family: Noto Sans TC;
-  font-size: 12px;
-  line-height: 16px;
-  color: #999999;
-}
-
-input::-webkit-input-placeholder {
-  color: #999999;
-  opacity: 1;
-}
-
-input:-ms-input-placeholder {
-  color: #999999;
-  opacity: 1;
-}
-
-input::-ms-input-placeholder {
-  color: #999999;
-  opacity: 1;
-}
-
-input::placeholder {
-  color: #999999;
-  opacity: 1;
-}
-
-select {
-  font-size: #2A2A2A;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 /*# sourceMappingURL=layout.css.map */

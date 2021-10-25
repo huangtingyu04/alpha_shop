@@ -122,7 +122,10 @@ select
         order: 1
         margin: 15px 0 5px 86px
 
-        +breakpoint(mobile)
+        +breakpoint(pad-portrait-980)
+            margin: 10px auto 5px
+
+        +breakpoint(mobile-landscape)
             margin: 20px auto
 
         img
@@ -146,18 +149,18 @@ select
         +breakpoint(zone-nb-small)
             flex-wrap: wrap
 
-        +breakpoint(mobile)
+        +breakpoint(mobile-landscape)
             display: block
             padding: 0 15px
 
         &.desktop
-            +breakpoint(mobile)
+            +breakpoint(mobile-landscape)
                 display: none
 
         li
             margin-right: 32px
 
-            +breakpoint(mobile)
+            +breakpoint(mobile-landscape)
                 margin-right: 0
                 padding: 24px 0
                 text-align: center
@@ -177,12 +180,12 @@ select
         display: flex
         margin-left: auto
 
-        +breakpoint(mobile)
+        +breakpoint(mobile-landscape)
             margin: 28px 0
             justify-content: center
 
         &.desktop
-            +breakpoint(mobile)
+            +breakpoint(mobile-landscape)
                 display: none
 
         a
@@ -230,7 +233,7 @@ select
         bottom: 0
         margin: auto
 
-        +breakpoint(mobile)
+        +breakpoint(mobile-landscape)
             display: block
 
         &.open
@@ -288,7 +291,10 @@ select
     +breakpoint(zone-nb-small)
         padding: 64px 30px 72px
 
-    +breakpoint(mobile)
+    +breakpoint(pad-portrait)
+        display: block
+
+    +breakpoint(mobile-landscape)
         display: none
 
     &::after
@@ -307,6 +313,12 @@ select
         padding-top: 62px
         margin-right: 114px
 
+        +breakpoint(pad-portrait)
+            width: 100%
+            margin-bottom: 30px
+            padding-top: 0
+            margin-right: 0
+
         img
             max-width: 170px
 
@@ -314,9 +326,11 @@ select
         display: flex
         width: 74.4%
 
+        +breakpoint(pad-portrait)
+            width: 100%
+
     .info-item
         width: calc(25% - 0px)
-        // margin-right: 120px 
 
         &:last-child
             margin-right: 0
@@ -359,7 +373,7 @@ select
     +breakpoint(zone-nb-small)
         padding: 80px 30px 124px
 
-    +breakpoint(mobile)
+    +breakpoint(mobile-landscape)
         padding: 16px 15px 144px
 
     .main-title
@@ -378,7 +392,7 @@ select
     .shop-box
         display: flex
 
-        +breakpoint(mobile)
+        +breakpoint(mobile-landscape)
             flex-wrap: wrap
 
         .info-box
@@ -388,14 +402,18 @@ select
             width: calc(60.4% - 134px)
             margin-right: 134px
 
-            +breakpoint(mobile)
+            +breakpoint(pad-portrait)
+                width: calc(60.4% - 70px)
+                margin-right: 70px
+
+            +breakpoint(mobile-landscape)
                 width: 100%
                 margin-right: 0
 
         .cart-box
             width: 39.6%
 
-            +breakpoint(mobile)
+            +breakpoint(mobile-landscape)
                 width: 100%
 
     .steps
@@ -483,7 +501,7 @@ select
                 color: #AFB1BD
                 white-space: nowrap
 
-                +breakpoint(mobile)
+                +breakpoint(pad-portrait-980)
                     display: none
 
     .form-outbox
@@ -584,7 +602,7 @@ select
         border-top: 1px solid #E6E6EB
         padding-top: 38px
 
-        +breakpoint(mobile)
+        +breakpoint(mobile-landscape)
             padding-top: 24px
             width: calc(100% - 30px)
             margin: auto
@@ -645,7 +663,7 @@ select
             width: calc(31% - 21px)
             margin-right: 21px
 
-            +breakpoint(mobile)
+            +breakpoint(pad-portrait)
                 width: 34%
                 margin-right: 0
 
@@ -662,7 +680,7 @@ select
             display: flex
             justify-content: space-between
 
-            +breakpoint(mobile)
+            +breakpoint(pad-portrait)
                 display: block
                 text-align: right
                 width: 66%
@@ -678,7 +696,7 @@ select
                 display: flex
                 align-items: center
 
-                +breakpoint(mobile)
+                +breakpoint(pad-portrait)
                     justify-content: flex-end
                     margin-bottom: 17px
 
